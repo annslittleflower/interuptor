@@ -1,0 +1,12 @@
+{
+  "name": "Interuptor",
+  "version": "0.1.0",
+  "description": "Extension designed to interrupt your computer time for you health improving",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
