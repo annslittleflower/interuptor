@@ -4,6 +4,15 @@
   "description": "Extension designed to interrupt your computer time for you health improving",
   "manifest_version": 3,
   "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png",
+      "64": "assets/ext-icon.png",
+      "128": "assets/ext-icon.png",
+      "512": "assets/ext-icon.png",
+      "1024": "assets/ext-icon.png"
+    },
     "default_popup": "index.html"
   },
   "background": {

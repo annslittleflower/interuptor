@@ -1,14 +1,14 @@
 setInterval(() => {
   chrome.windows.create({
     focused: true,
-    width: 400,
-    height: 600,
+    width: 1000,
+    height: 800,
     type: 'popup',
-    url: 'index.html',
-    top: 0,
-    left: 0
+    url: 'popup.html',
+    top: 100,
+    left: 100
   },
   () => {})
-}, 5000)
+}, 15000)
 
 
