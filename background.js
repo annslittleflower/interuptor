@@ -1,4 +1,6 @@
-setInterval(() => {
+let currentInterval = null
+
+function renderPopup() {
   chrome.windows.create({
     focused: true,
     width: 1000,
@@ -9,6 +11,27 @@ setInterval(() => {
     left: 100
   },
   () => {})
-}, 15000)
+}
 
+chrome.runtime.onMessage.addListener((msg) => {
+  if (currentInterval) {
+    clearInterval(currentInterval)
+  }
+
+  currentInterval = setInterval(renderPopup, msg.minutes * 60 * 1000)
+});
+
+chrome.runtime.onInstalled.addListener((details) => {
+  if(details.reason == "install"){
+    try {
+      chrome.runtime.sendMessage({ "minutes": 40 });
+    } catch (e) {
+      console.log(e)
+    }
+    return
+  }
+  if(details.reason == "update"){
+    return
+  }
+});
 

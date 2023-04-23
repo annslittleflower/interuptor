@@ -49,3 +49,15 @@ footer {
   border-top: 1px solid #fff;
   padding: 2rem 0;
 }
+
+.images-row {
+  margin-bottom: 4rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.images-row img {
+  max-height: 420px;
+}

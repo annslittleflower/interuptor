@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log('hello im loaded')
 
+  const ti = document.getElementById('time-input')
 
+  chrome.runtime.sendMessage({ "minutes": Number(ti.value) });
 
+  ti.addEventListener('change', (e) => {
+    const minutes = Number(e.target.value)
+
+    chrome.runtime.sendMessage({"minutes": minutes });
+  })
   
 });
-
-
-// setInterval(() => {
-//   window.open("index.html", "extension_popup", "width=300,height=400,status=no,scrollbars=yes,resizable=no");
-
-// }, 10000)
