@@ -24,7 +24,10 @@ chrome.runtime.onMessage.addListener((msg) => {
 chrome.runtime.onInstalled.addListener((details) => {
   if(details.reason == "install"){
     try {
-      chrome.runtime.sendMessage({ "minutes": 40 });
+      chrome.tabs.create({
+        url: "index.html"
+      });
+      // chrome.runtime.sendMessage({ "minutes": 40 });
     } catch (e) {
       console.log(e)
     }

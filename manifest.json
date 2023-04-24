@@ -1,6 +1,7 @@
 {
   "name": "Interuptor",
   "version": "0.1.0",
+  "permissions": ["storage", "tabs"],
   "description": "Extension designed to interrupt your computer time for you health improving",
   "manifest_version": 3,
   "action": {
@@ -8,6 +9,7 @@
       "16": "assets/ext-icon.png",
       "24": "assets/ext-icon.png",
       "32": "assets/ext-icon.png",
+      "48": "assets/ext-icon.png",
       "64": "assets/ext-icon.png",
       "128": "assets/ext-icon.png",
       "512": "assets/ext-icon.png",
