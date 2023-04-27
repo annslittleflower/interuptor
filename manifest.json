@@ -1,6 +1,6 @@
 {
   "name": "Interuptor",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "permissions": ["storage", "tabs"],
   "description": "Extension designed to interrupt your computer time for you health improving",
   "manifest_version": 3,

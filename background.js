@@ -17,7 +17,6 @@ chrome.runtime.onMessage.addListener((msg) => {
   if (currentInterval) {
     clearInterval(currentInterval)
   }
-  console.log('MINUTES', msg);
   chrome.storage.sync.set({"TIME_VALUE": msg.minutes})
   currentInterval = setInterval(renderPopup, msg.minutes * 60 * 1000)
 });
@@ -28,7 +27,6 @@ chrome.runtime.onInstalled.addListener((details) => {
       chrome.tabs.create({
         url: "index.html"
       });
-      // chrome.runtime.sendMessage({ "minutes": 40 });
     } catch (e) {
       console.log(e)
     }
