@@ -1,43 +1,40 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
-  // const getStorageData = key =>
-  //   new Promise((resolve, reject) =>
-  //     chrome.storage.sync.get(key, result =>
-  //       chrome.runtime.lastError
-  //         ? reject(Error(chrome.runtime.lastError.message))
-  //         : resolve(result)
-  //     )
-  //   )
+  const getStorageData = key =>
+    new Promise((resolve, reject) =>
+      chrome.storage.sync.get(key, result =>
+        chrome.runtime.lastError
+          ? reject(Error(chrome.runtime.lastError.message))
+          : resolve(result)
+      )
+    )
 
-  // const setStorageData = data =>
-  //   new Promise((resolve, reject) =>
-  //     chrome.storage.sync.set(data, () =>
-  //       chrome.runtime.lastError
-  //         ? reject(Error(chrome.runtime.lastError.message))
-  //         : resolve()
-  //     )
-  //   )
+//   const setStorageData = (key, value) =>
+//     // new Promise((resolve, reject) =>
+//     //   chrome.storage.sync.set(data, () =>
+//     //     chrome.runtime.lastError
+//     //       ? reject(Error(chrome.runtime.lastError.message))
+//     //       : resolve()
+//     //   )
+//  // )
 
   const ti = document.getElementById('time-input')
-  // const TIME_VALUE = 1
 
-  // console.log('23123', TIME_VALUE)
+  const result = await chrome.storage.sync.get(['TIME_VALUE'])
+  const value = result['TIME_VALUE']
 
-  ti.value = 40
+  console.log('RESULT', value)
 
-  chrome.runtime.sendMessage({ "minutes": Number(ti.value) });
+  if (value) ti.value = value
+  else ti.value = 40
+  await chrome.runtime.sendMessage({ "minutes": Number(ti.value) });
 
-  ti.addEventListener('change', (e) => {
+  ti.addEventListener('change', async (e) => {
     const minutes = Number(e.target.value)
 
-    // setStorageData({ data: [someData] })
-
-
     if (minutes) {
-      chrome.runtime.sendMessage({"minutes": minutes });
+      await chrome.runtime.sendMessage({"minutes": minutes });
     }
-    // chrome.storage.sync.set({"TIME_VALUE": minutes})
-
   })
   
 });
