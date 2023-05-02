@@ -6,7 +6,7 @@ function renderPopup() {
     width: 1000,
     height: 800,
     type: 'popup',
-    url: 'popup.html',
+    url: chrome.runtime.getURL('popup.html'),
     top: 100,
     left: 100
   },
