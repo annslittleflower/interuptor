@@ -26,7 +26,7 @@ chrome.runtime.onMessage.addListener((msg) => {
   if (msg.minutes <= 0) {
     return
   }
-  currentInterval = setInterval(() => renderPopup(), msg.minutes * 10 * 1000)
+  currentInterval = setInterval(() => renderPopup(), msg.minutes * 60 * 1000)
 });
 
 chrome.runtime.onInstalled.addListener((details) => {
