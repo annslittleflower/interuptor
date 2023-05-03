@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const ti = document.getElementById('time-input')
 
-  const result = await chrome.storage.sync.get(['TIME_VALUE'])
-  const value = result['TIME_VALUE']
+  const result = await chrome.storage.sync.get(['TIME_VALUE_1'])
+  const value = result['TIME_VALUE_1']
 
-  ti.value = value || 40
+  ti.value = !value || value <=0 ? 40 : value;
 
   await chrome.runtime.sendMessage({ "minutes": Number(ti.value) });
 

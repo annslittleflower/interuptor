@@ -1,21 +1,26 @@
 {
   "name": "Interuptor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "permissions": ["storage"],
   "description": "Extension designed to interrupt your computer time for you health improving",
   "manifest_version": 3,
   "action": {
     "default_icon": {
-      "16": "assets/ext-icon.png",
+      "16": "assets/ext-icon-16.png",
       "24": "assets/ext-icon.png",
-      "32": "assets/ext-icon.png",
-      "48": "assets/ext-icon.png",
-      "64": "assets/ext-icon.png",
-      "128": "assets/ext-icon.png",
-      "512": "assets/ext-icon.png",
-      "1024": "assets/ext-icon.png"
+      "32": "assets/ext-icon-32.png"
     },
     "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "assets/ext-icon-16.png",
+    "24": "assets/ext-icon.png",
+    "32": "assets/ext-icon-32.png",
+    "48": "assets/ext-icon.png",
+    "64": "assets/ext-icon.png",
+    "128": "assets/ext-icon-128.png",
+    "512": "assets/ext-icon.png",
+    "1024": "assets/ext-icon.png"
   },
   "background": {
     "service_worker": "background.js"
